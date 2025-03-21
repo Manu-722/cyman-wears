@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/c8ee036931.js" crossorigin="anonymous"></script>
+    <style>
+        .card:hover .content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-grey-900">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-gray-900 text-white flex justify-between items-center px-8 py-4 z-50">
+        <div class="text-xl font-bold">CYMAN WEAR</div>
+        <ul class="hidden md:flex space-x-6">
+            <li><a href="#hero" class="cursor-pointer hover:text-white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-red-500 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">Home</a></li>
+            <li><a href="#about" class="hover:text-white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-red-500 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">About</a></li>
+            <li><a href="#services" class="hover:text-white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-red-500 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">Services</a></li>
+            <li><a href="#contact" class="hover:text-white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-red-500 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">Contact</a></li>
+        </ul>
+        <div class="md:hidden text-2xl cursor-pointer">&#9776;</div>
+    </nav>
+    <!-- Hero Section -->
+    <header id="hero" class="h-screen bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('assets/pexels-solliefoto-298864.jpg');">
+        <div class="bg-black bg-opacity-50 p-8 rounded-lg">
+            <h1 class="text-4xl font-bold">Welcome to CYMAN WEAR</h1>
+            <p class="text-lg">We are a company that gives you the best wear of all times.</p>
+            <a href="#contact" class="inline-block mt-4 bg-red-500 text-white px-6 py-2 rounded-full">Contact Us</a>
+        </div>
+    </header>
+   <!-- Main Section -->
+<main class="px-6 py-10 text-center">
+    <section id="about" class="mb-10 cursor-pointer">
+        <h2>About Us</h2>
+        <p>We specialize in sneakers and boots of the best quality made originally.</p>
+    </section>
+    <section id="services" class="p-8">
+        <h2 class="text-2xl font-bold mb-8">Our Services</h2>
+        <div class="grid grid-cols-8 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="card relative bg-white shadow-lg rounded-lg overflow-hidden">
+                <div class="image-slot">
+                    <img src="assets/pexels-nikola-kolev-2438142-18370955.jpg" alt="Web Development">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold">Web Development</h3>
+                </div>
+                <div class="content absolute inset-0 bg-black bg-opacity-75 text-white opacity-0 flex items-center justify-center transition-opacity duration-300">
+                    <p>We build responsive and user-friendly websites that are tailored to your needs.</p>
+                </div>
+            </div>
+            <div class="card relative bg-white shadow-lg rounded-lg overflow-hidden">
+                <div class="image-slot">
+                    <img src="assets/pexels-pixabay-34098.jpg" alt="Graphic Design">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold">Graphic Design</h3>
+                </div>
+                <div class="content absolute inset-0 bg-black bg-opacity-75 text-white opacity-0 flex items-center justify-center transition-opacity duration-300">
+                    <p>We create beautiful and modern designs for your website, app, and print needs.</p>
+                </div>
+            </div>
+            <div class="card relative bg-white shadow-lg rounded-lg overflow-hidden">
+                <div class="image-slot">
+                    <img src="assets/pexels-futurekiiid-3551498.jpg" alt="Digital Marketing">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold">Digital Marketing</h3>
+                </div>
+                <div class="content absolute inset-0 bg-black bg-opacity-75 text-white opacity-0 flex items-center justify-center transition-opacity duration-300">
+                    <p>We help you market and promote your products and services online.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section bg-gray-100 p-8>
+        <h2 id="contact" class="text-2xl font-bold mb-8">Contact Us</h2>
+        <form action="submit.php" method="POST" class="flex flex-col items-center rounded-lg"required>
+            <input type="text" name="name" placeholder="Name" class="w-full p-2 mb-4 rounded-md font-bold"required>
+            <input type="email" name="email" placeholder="Email" class="w-full p-2 mb-4 rounded-md font-bold"required>
+            <textarea name="message" placeholder="Message" class="w-full p-2 mb-4 rounded-md font-bold"required></textarea>
+            <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-full font-bold mt-4 mb-4">Submit</button>
+        </form>
+    </section>
+    <!-- Footer section -->
+     <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- About services -->
+             <div>
+                <h3 class="text-lg font-semibold mb-2">About</h3>
+                <p class="text-gray-400">We are dedicated to giving you the best looks at all times</p>
+             </div>
+                <!-- Quick links -->
+                 <div>
+                    <h3 class="text-lg font-semibold mb-2">Quick links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#hero" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+
+                 </div>
+                 <!-- contact section-->
+                  <div>
+                    <h3 class="text-lg font-semibold mb-2">Contact</h3>
+                    <p class="text-gray-400">Email: Emmanuelmulongo46@gmail.com</p>
+                    <p class="text-gray-400">Phone: +254745792950</p>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-semibold mb-2">Follow us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-facebook"></i></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-x-twitter"></i></i></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-instagram"></i></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-threads"></i></i></i></a>
+                  </div>
+        </div>
+     </footer>
+
+</main>
+
+</body>
+</html>
