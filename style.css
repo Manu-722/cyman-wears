@@ -1,46 +1,185 @@
-.container {
+.card:hover .content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: none; /* Initially hide the dropdown */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* Show the dropdown on hover */
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* On small screens, make the left section full width */
+    .flex {
+        flex-direction: column;
+    }
+    .w-full {
+        width: 100%;
+    }
+}
+/* Centering the sign-up form in the middle of the page */
+.signup-container {
     display: flex;
-    width: 80%;
-    height: 80%;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f7f7f7; /* Optional background color for the page */
 }
 
-.checkbox-section {
-    width: 33.33%;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-right: 2px solid #ddd;
-}
-
-.checkbox-section h3 {
-    margin-bottom: 20px;
-}
-
-.checkbox-section label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.image-section {
-    width: 66.66%;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.image-section h3 {
-    margin-bottom: 20px;
-}
-
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-.image-grid img {
-    width: 100%;
-    height: auto;
+.signup-form {
+    background-color: white;
+    padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Max width for the form */
 }
+
+/* Form field styling */
+.form-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.form-button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    background-color: #357abd;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: block;
+    color: #333;
+}
+
+.form-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 12px;
+    text-align: center;
+}
+ /* General styles for About Us section */
+ #about, #vision, #mission {
+    padding: 4rem 2rem;
+    background-color: #f7f7f7;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* Section content styling */
+.section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-content p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    text-align: center;
+    color: #666;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* About image */
+.about-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+    /* Gallery Section */
+    .gallery-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem; /* Adds space between the items */
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+        transform: scale(1.05); /* Hover effect */
+    }
+
+    /* Ensure images are the same size in all columns and rows */
+    .gallery-container {
+        grid-template-columns: repeat(1, 1fr); /* Single column for mobile */
+    }
+
+    /* Responsive Gallery Layout */
+    @media (min-width: 640px) {
+        .gallery-container {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+        }
+    }
+
+    @media (min-width: 768px) {
+        .gallery-container {
+            grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .gallery-container {
+            grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+        }
+    }
+
+    /* Gallery Item Styling for Consistency */
+    .gallery-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 250px; /* Set a consistent height for images */
+        overflow: hidden;
+    }
+
+    .gallery-item img {
+        object-fit: cover; /* Make sure the image covers the entire container */
+    }
+
