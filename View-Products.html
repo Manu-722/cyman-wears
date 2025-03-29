@@ -1,0 +1,187 @@
+
+<div class="product-gallery">
+    <div class="product-card">
+        <img src="assets/pexels-introspectivedsgn-16094250.jpg" alt="Brand 1">
+        <div class="product-details">
+            <p class="brand-name">Nike</p>
+            <p class="price">KSH 3500</p>
+            <button class="add-to-cart" onclick="addToCart('Nike')">Add to Cart</button>
+        </div>
+    </div>
+
+   
+    
+
+    
+   
+    
+    <div class="product-card">
+        <img src="assets/pexels-mnzoutfits-1598505.jpg" alt="Brand 2">
+        <div class="product-details">
+            <p class="brand-name">Nike</p>
+            <p class="price">Ksh 4500</p>
+            <button class="add-to-cart" onclick="addToCart('Nike')">Add to Cart</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="assets/pexels-mnzoutfits-1598508.jpg" alt="Brand 2">
+        <div class="product-details">
+            <p class="brand-name">Vans</p>
+            <p class="price">Ksh 3000</p>
+            <button class="add-to-cart" onclick="addToCart('Vans')">Add to Cart</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="assets/pexels-nytheone-1070360.jpg" alt="Brand 2">
+        <div class="product-details">
+            <p class="brand-name">Nike</p>
+            <p class="price">KSH 3800</p>
+            <button class="add-to-cart" onclick="addToCart('Nike')">Add to Cart</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="assets/pexels-pixabay-267280.jpg" alt="Brand 2">
+        <div class="product-details">
+            <p class="brand-name">Casual</p>
+            <p class="price">KSH 4500</p>
+            <button class="add-to-cart" onclick="addToCart('Casual')">Add to Cart</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="assets/pexels-ihsanaditya-1445696.jpg" alt="Brand 2">
+        <div class="product-details">
+            <p class="brand-name">Heels</p>
+            <p class="price">KSH 4500</p>
+            <button class="add-to-cart" onclick="addToCart('Heels')">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="assets/pexels-pixabay-267301.jpg" alt="Brand 2">
+        <div class="product-details">
+            <p class="brand-name">Moccasins</p>
+            <p class="price">KSH 3200</p>
+            <button class="add-to-cart" onclick="addToCart('Moccasins')">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="assets/pexels-scottwebb-137603.jpg" alt="Brand 2">
+        <div class="product-details">
+            <p class="brand-name">Heels</p>
+            <p class="price">Ksh 2500</p>
+            <button class="add-to-cart" onclick="addToCart('Heels')">Add to Cart</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="assets/pexels-solliefoto-298863.jpg" alt="Brand 2">
+        <div class="product-details">
+            <p class="brand-name">Casual</p>
+            <p class="price">Ksh 5000</p>
+            <button class="add-to-cart" onclick="addToCart('Casual')">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="assets/pexels-solliefoto-298864.jpg" alt="Brand 3">
+        <div class="product-details">
+            <p class="brand-name">casual</p>
+            <p class="price">Ksh 4800</p>
+            <button class="add-to-cart" onclick="addToCart('casual')">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<script>
+function addToCart(brandName) {
+    alert(brandName + " has been added to your cart!");
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+<style>
+    .product-gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;  /* Ensures wrapping of cards on smaller screens */
+  justify-content: space-around; /* Ensures equal space distribution */
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  width: 200px;  /* Fixed width for product cards */
+  margin-bottom: 20px; /* Adds space between cards */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 200px; /* Makes cards flexible but maintains a minimum size */
+  max-width: 250px; /* Prevents cards from becoming too wide */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.product-card img {
+  width: 100%;  /* Ensures the image takes full width of the container */
+  height: 200px;  /* Fixed height for consistent image sizes */
+  object-fit: cover; /* Ensures images cover the container area without distortion */
+  border-bottom: 1px solid #ccc; /* Optional: Adds a border to separate image from details */
+}
+
+.product-details {
+  padding: 10px;
+}
+
+.brand-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.price {
+  color: green;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.add-to-cart {
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add-to-cart:hover {
+  background-color: #e03e00;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  .product-gallery {
+      flex-direction: column;  /* Stacks products vertically */
+      align-items: center;  /* Centers the product cards */
+  }
+
+  .product-card {
+      width: 100%;  /* Make product cards full width */
+      max-width: 300px;  /* Prevents cards from becoming too wide */
+  }
+
+  .product-card img {
+      height: 180px; /* Slightly smaller height on mobile for better fit */
+  }
+}
+</style>
+
