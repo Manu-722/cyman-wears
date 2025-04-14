@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Webpage - Log In</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function showSuccessMessage(event) {
+            event.preventDefault(); // Prevent form submission
+            alert("You have successfully logged in");
+            window.location.href = "index.html"; // Redirect to index.html
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-gray-700 text-white flex justify-center items-center h-screen">
+    <div class="bg-gray-800 rounded-lg shadow-lg p-8 w-full max-w-md">
+        <h1 class="text-center text-2xl font-bold mb-6">Log In</h1>
+        <form onsubmit="showSuccessMessage(event)" class="space-y-4">
+            <div>
+                <label for="username" class="block text-sm font-medium">Username</label>
+                <input type="text" id="username" name="username" class="w-full mt-1 p-2 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium">Password</label>
+                <input type="password" id="password" name="password" class="w-full mt-1 p-2 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Log In
+            </button>
+        </form>
+        <p class="text-center text-sm mt-4">
+            Don't have an account? <a href="sign-up.html" class="text-blue-400 hover:underline">Sign Up</a>
+        </p>
+    </div>
+</body>
+</html>
