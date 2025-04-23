@@ -8,20 +8,48 @@
 </head>
 <body>
     <div class="container">
-        <header>
+
+        <header class="top-header">
             <h1>Shopping Cart</h1>
-            <a href="view-products.html" class="text-blue-400 hover:underline">Back to Products</a>
+            <a href="view-products.html" class="back-button">Back to Products</a>
         </header>
+        
+        
+        
+        
         <div id="cart-items" class="cart-list"></div>
         <div class="cart-total">
             <p>Total: KSH <span id="total">0</span></p>
+            
             <button onclick="clearCart()">Clear Cart</button>
         </div>
     </div>
 
+
+    <div id="cart-items"></div>
+<div id="total-amount"></div>
+<span id="cart-count" style="display: none;"></span>
+<select id="payment-method">
+    <option value="cash">Cash</option>
+    <option value="card">Card</option>
+</select>
+
+ <!-- Discount Details -->
+ <div id="discount-section">
+    <p id="discount-details" class="text-gray-500"></p>
+    <button onclick="applyDiscount()">Apply Discount</button>
+</div>
+<!-- Cart Summary Section -->
+<div id="cart-summary">
+    <span id="cart-count" style="display: none;"></span>
+    <button onclick="checkout()">Checkout</button>
+</div>
+
+
     <script>
         const cartItemsContainer = document.getElementById('cart-items');
         const totalDisplay = document.getElementById('total');
+        const cartCount = document.getElementById('cart-count');
 
         // Render the cart
         function renderCart() {
@@ -70,7 +98,38 @@
 
         // Initial render
         renderCart();
+
+
+
+
+
+        // Function to apply a discount code
+function applyDiscount() {
+    const discountCode = prompt("Enter discount code:");
+    const validCodes = {
+        SAVE10: 0.10, // 10% discount
+        SAVE20: 0.20  // 20% discount
+    };
+
+    if (validCodes[discountCode]) {
+        const discount = validCodes[discountCode];
+        const discountAmount = total * discount;
+        total -= discountAmount;
+        alert(`Discount applied! You saved KSH ${discountAmount.toFixed(2)}.`);
+        updateCartSummary();
+    } else {
+        alert("Invalid discount code.");
+    }
+}
+
+
     </script>
+   
+   
+    
 </body>
 </html>
 
+
+
+       
