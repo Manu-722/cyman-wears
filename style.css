@@ -359,4 +359,58 @@ header a:hover {
 
 .go-to-cart-btn:hover {
   background-color: #e03e00;
+
 }
+/* Header container */
+/* Top fixed header */
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px 10px 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Title styling */
+.top-header h1 {
+  margin: 0;
+  font-size: 26px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Button styling */
+.back-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #3490dc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #2779bd;
+}
+
+/* Push main content below the fixed header */
+.container {
+  padding-top: 130px; /* Adjust based on header height */
+}
+
+
+
+
+
+
+
+
+
