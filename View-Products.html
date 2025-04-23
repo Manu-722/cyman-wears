@@ -31,7 +31,7 @@
                 <div class="product-details">
                     <p class="brand-name">Nike</p>
                     <p class="price">KSH 3500</p>
-                    <button class="add-to-cart" onclick="addToCart({name: 'Nike',price: 3500})">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart({name: 'Nike',brand: 'Nike', price: 3500 , image: 'assets/pexels-introspectivedsgn-16094250.jpg'})">Add to Cart</button>
                 </div>
             </div>
             <div class="product-card">
@@ -39,7 +39,7 @@
                 <div class="product-details">
                     <p class="brand-name">Nike</p>
                     <p class="price">Ksh 4500</p>
-                    <button class="add-to-cart" onclick="addToCart('Nike')">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart({name: 'Nike',brand: 'Nike', price: 3500, image: 'assets/pexels-mnzoutfits-1598505.jpg'})">Add to Cart</button>
                 </div>
             </div>
             <div class="product-card">
@@ -47,7 +47,7 @@
                 <div class="product-details">
                     <p class="brand-name">Vans</p>
                     <p class="price">Ksh 3000</p>
-                    <button class="add-to-cart" onclick="addToCart('Vans')">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart({name: 'Vans',brand:'Vans', price: 3000, image: 'assets/pexels-mnzoutfits-1598508.jpg'})">Add to Cart</button>
                 </div>
             </div>
             <div class="product-card">
@@ -55,7 +55,7 @@
                 <div class="product-details">
                     <p class="brand-name">Nike</p>
                     <p class="price">KSH 3800</p>
-                    <button class="add-to-cart" onclick="addToCart('Nike')">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart({name: 'Nike',brand:'Nike', price: 3800, image: 'assets/pexels-nytheone-1070360.jpg'})">Add to Cart</button>
                 </div>
             </div>
             <div class="product-card">
@@ -63,7 +63,7 @@
                 <div class="product-details">
                     <p class="brand-name">Casual</p>
                     <p class="price">KSH 4500</p>
-                    <button class="add-to-cart" onclick="addToCart('Casual')">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart({name: 'Casual',brand:'Casual', price: 4500})">Add to Cart</button>
                 </div>
             </div>
             <div class="product-card">
@@ -71,7 +71,7 @@
                 <div class="product-details">
                     <p class="brand-name">Heels</p>
                     <p class="price">KSH 4500</p>
-                    <button class="add-to-cart" onclick="addToCart('Heels')">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart({name: 'Heels',brand:'Heels', price: 4500})">Add to Cart</button>
                 </div>
             </div>
         
@@ -80,7 +80,7 @@
                 <div class="product-details">
                     <p class="brand-name">Moccasins</p>
                     <p class="price">KSH 3200</p>
-                    <button class="add-to-cart" onclick="addToCart('Moccasins')">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart({name: 'Moccasins', brand:'Moccasins', price: 3200})">Add to Cart</button>
                 </div>
             </div>
         
@@ -89,7 +89,7 @@
                 <div class="product-details">
                     <p class="brand-name">Heels</p>
                     <p class="price">Ksh 2500</p>
-                    <button class="add-to-cart" onclick="addToCart('Heels')">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart({name: 'Heels',price: 2500,image:'assets/pexels-scottwebb-137603.jpg'})">Add to Cart</button>
                 </div>
             </div>
             <div class="product-card">
@@ -97,7 +97,7 @@
                 <div class="product-details">
                     <p class="brand-name">Casual</p>
                     <p class="price">Ksh 5000</p>
-                    <button class="add-to-cart" onclick="addToCart('Casual')">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart({name: 'Casual',price: 5000,image:'assets/pexels-solliefoto-298863.jpg'})">Add to Cart</button>
                 </div>
             </div>
         
@@ -106,7 +106,7 @@
                 <div class="product-details">
                     <p class="brand-name">casual</p>
                     <p class="price">Ksh 4800</p>
-                    <button class="add-to-cart" onclick="addToCart('casual')">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart({name: 'Casual',price: 4800, image:'assets/pexels-solliefoto-298864.jpg'})">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -206,6 +206,7 @@
     </div>
     <a href="cart.html" class="text-blue-400 hover:underline">Go to Cart</a>
 
+
     <script>
         // Function to add items to the cart
         function addToCart(item) {
@@ -217,3 +218,5 @@
     </script>
 </body>
 </html>
+
+
