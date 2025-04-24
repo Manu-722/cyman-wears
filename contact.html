@@ -1,20 +1,299 @@
 
-<a href="tel:0745792950" class="text-blue-500 hover:underline">Call Us</a>
-<style>
-  .contact-info {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYMAN Wear</title>
+    <style>
+        /* General Page Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
 
-  .contact-info a {
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-</style>
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-<div class="contact-info">
-  <a href="mailto:emmanuelmulongo460gmail.com" class="text-blue-500 hover:underline">Email Us</a>
-</div>
-<a href="mailto:emmanuelmulongo460gmail.com" class="text-blue-500 hover:underline">Email Us</a>
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff4500;
+            text-transform: uppercase;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .navbar .nav-links a:hover {
+            background-color: #ff4500;
+            color: #fff;
+        }
+
+        /* Hero Banner Styles */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(45deg, #ff4500, #ff7b00);
+            height: 250px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero h1.show-h1 {
+            opacity: 1;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-top: 10px;
+        }
+
+        /* Email Us Section Styles */
+        .email-section {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .email-section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #333;
+            border-bottom: 2px solid #ff4500;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .email-section p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .email-section a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            background-color: #008CBA;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .email-section a:hover {
+            background-color: #005F8C;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Feedback Form Styling */
+        .feedback-form {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #333;
+            border-bottom: 2px solid #ff4500;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .feedback-form label {
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea,
+        .feedback-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+
+        .feedback-form input:focus,
+        .feedback-form textarea:focus {
+            outline: none;
+            border: 1px solid #ff4500;
+            box-shadow: 0 0 5px rgba(255, 69, 0, 0.5);
+        }
+
+        .feedback-form button {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .feedback-form button:hover {
+            background-color: #e03e00;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+        }
+
+        footer a {
+            color: #ff4500;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .email-section,
+            .feedback-form {
+                padding: 15px;
+            }
+        }
+    </style>
+    <script>
+        // Show the h1 in the hero section after 1 second
+        window.addEventListener("DOMContentLoaded", () => {
+            const heroH1 = document.querySelector(".hero h1");
+            setTimeout(() => {
+                heroH1.classList.add("show-h1");
+            }, 1000); // Delay of 1 second
+        });
+
+        // Handle feedback form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert("Your feedback has been submitted successfully! Redirecting to the homepage...");
+            window.location.href = "index.html"; // Redirect to homepage
+        }
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">CYMAN Wear</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <div>
+            <h1>Welcome to CYMAN Wear</h1>
+            <p>Your #1 stop for style and comfort</p>
+        </div>
+    </div>
+
+    <!-- Email Us Section -->
+    <section class="email-section" id="email-us">
+        <h2>Email Us</h2>
+        <p>If you have any questions, feel free to drop us a message:</p>
+        <a href="mailto:info@cymanwear.com">Email Us Now</a>
+    </section>
+
+    <!-- Feedback Form -->
+    <section class="feedback-form">
+        <h2>Feedback Form</h2>
+        <form onsubmit="handleFormSubmit(event)">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Your Feedback:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 CYMAN Wear | <a href="mailto:info@cymanwear.com">Contact Us</a></p>
+    </footer>
+</body>
+</html>
