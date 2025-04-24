@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="product-gallery">
         <div class="product-card">
             <img src="assets/pexels-introspectivedsgn-16094250.jpg" alt="Nike Shoe">
             <div class="product-details">
                 <p class="brand-name">Nike</p>
                 <p class="price">KSH 3500</p>
+                <p class="description">These Nike shoes combine comfort and performance, making them ideal for running and casual wear.</p>
                 <button class="add-to-cart" onclick="addToCart({name: 'Nike Shoe', brand: 'Nike', price: 3500, image: 'assets/pexels-introspectivedsgn-16094250.jpg'})">Add to Cart</button>
             </div>
         </div>
@@ -21,96 +23,85 @@
             <div class="product-details">
                 <p class="brand-name">Nike</p>
                 <p class="price">KSH 4500</p>
+                <p class="description">Stylish and versatile casual shoes from Nike, perfect for everyday fashion and comfort.</p>
                 <button class="add-to-cart" onclick="addToCart({name: 'Nike Casual', brand: 'Nike', price: 4500, image: 'assets/pexels-mnzoutfits-1598505.jpg'})">Add to Cart</button>
             </div>
         </div>
-        <!-- Add additional product cards here -->
-        <div class="product-gallery">
-            <div class="product-card">
-                <img src="assets/pexels-introspectivedsgn-16094250.jpg" alt="Brand 1">
-                <div class="product-details">
-                    <p class="brand-name">Nike</p>
-                    <p class="price">KSH 3500</p>
-                    <button class="add-to-cart" onclick="addToCart({name: 'Nike',brand: 'Nike', price: 3500 , image: 'assets/pexels-introspectivedsgn-16094250.jpg'})">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="assets/pexels-mnzoutfits-1598505.jpg" alt="Brand 2">
-                <div class="product-details">
-                    <p class="brand-name">Nike</p>
-                    <p class="price">Ksh 4500</p>
-                    <button class="add-to-cart" onclick="addToCart({name: 'Nike',brand: 'Nike', price: 3500, image: 'assets/pexels-mnzoutfits-1598505.jpg'})">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="assets/pexels-mnzoutfits-1598508.jpg" alt="Brand 2">
-                <div class="product-details">
-                    <p class="brand-name">Vans</p>
-                    <p class="price">Ksh 3000</p>
-                    <button class="add-to-cart" onclick="addToCart({name: 'Vans',brand:'Vans', price: 3000, image: 'assets/pexels-mnzoutfits-1598508.jpg'})">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="assets/pexels-nytheone-1070360.jpg" alt="Brand 2">
-                <div class="product-details">
-                    <p class="brand-name">Nike</p>
-                    <p class="price">KSH 3800</p>
-                    <button class="add-to-cart" onclick="addToCart({name: 'Nike',brand:'Nike', price: 3800, image: 'assets/pexels-nytheone-1070360.jpg'})">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="assets/pexels-pixabay-267280.jpg" alt="Brand 2">
-                <div class="product-details">
-                    <p class="brand-name">Casual</p>
-                    <p class="price">KSH 4500</p>
-                    <button class="add-to-cart" onclick="addToCart({name: 'Casual',brand:'Casual', price: 4500})">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="assets/pexels-ihsanaditya-1445696.jpg" alt="Brand 2">
-                <div class="product-details">
-                    <p class="brand-name">Heels</p>
-                    <p class="price">KSH 4500</p>
-                    <button class="add-to-cart" onclick="addToCart({name: 'Heels',brand:'Heels', price: 4500})">Add to Cart</button>
-                </div>
-            </div>
-        
-            <div class="product-card">
-                <img src="assets/pexels-pixabay-267301.jpg" alt="Brand 2">
-                <div class="product-details">
-                    <p class="brand-name">Moccasins</p>
-                    <p class="price">KSH 3200</p>
-                    <button class="add-to-cart" onclick="addToCart({name: 'Moccasins', brand:'Moccasins', price: 3200})">Add to Cart</button>
-                </div>
-            </div>
-        
-            <div class="product-card">
-                <img src="assets/pexels-scottwebb-137603.jpg" alt="Brand 2">
-                <div class="product-details">
-                    <p class="brand-name">Heels</p>
-                    <p class="price">Ksh 2500</p>
-                    <button class="add-to-cart" onclick="addToCart({name: 'Heels',price: 2500,image:'assets/pexels-scottwebb-137603.jpg'})">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="assets/pexels-solliefoto-298863.jpg" alt="Brand 2">
-                <div class="product-details">
-                    <p class="brand-name">Casual</p>
-                    <p class="price">Ksh 5000</p>
-                    <button class="add-to-cart" onclick="addToCart({name: 'Casual',price: 5000,image:'assets/pexels-solliefoto-298863.jpg'})">Add to Cart</button>
-                </div>
-            </div>
-        
-            <div class="product-card">
-                <img src="assets/pexels-solliefoto-298864.jpg" alt="Brand 3">
-                <div class="product-details">
-                    <p class="brand-name">casual</p>
-                    <p class="price">Ksh 4800</p>
-                    <button class="add-to-cart" onclick="addToCart({name: 'Casual',price: 4800, image:'assets/pexels-solliefoto-298864.jpg'})">Add to Cart</button>
-                </div>
+        <div class="product-card">
+            <img src="assets/pexels-mnzoutfits-1598508.jpg" alt="Vans">
+            <div class="product-details">
+                <p class="brand-name">Vans</p>
+                <p class="price">KSH 3000</p>
+                <p class="description">Classic Vans sneakers designed for durability and skateboarding enthusiasts.</p>
+                <button class="add-to-cart" onclick="addToCart({name: 'Vans',brand:'Vans', price: 3000, image: 'assets/pexels-mnzoutfits-1598508.jpg'})">Add to Cart</button>
             </div>
         </div>
-        
+        <div class="product-card">
+            <img src="assets/pexels-nytheone-1070360.jpg" alt="Nike Sports">
+            <div class="product-details">
+                <p class="brand-name">Nike</p>
+                <p class="price">KSH 3800</p>
+                <p class="description">Nike sports shoes offering unmatched support and performance for athletes.</p>
+                <button class="add-to-cart" onclick="addToCart({name: 'Nike Sports',brand:'Nike', price: 3800, image: 'assets/pexels-nytheone-1070360.jpg'})">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="assets/pexels-pixabay-267280.jpg" alt="Casual Shoes">
+            <div class="product-details">
+                <p class="brand-name">Casual</p>
+                <p class="price">KSH 4500</p>
+                <p class="description">Comfortable casual shoes for everyday use, blending simplicity with style.</p>
+                <button class="add-to-cart" onclick="addToCart({name: 'Casual',brand:'Casual', price: 4500})">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="assets/pexels-ihsanaditya-1445696.jpg" alt="Heels">
+            <div class="product-details">
+                <p class="brand-name">Heels</p>
+                <p class="price">KSH 4500</p>
+                <p class="description">Elegant high heels that elevate your fashion game for formal occasions.</p>
+                <button class="add-to-cart" onclick="addToCart({name: 'Heels',brand:'Heels', price: 4500})">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="assets/pexels-pixabay-267301.jpg" alt="Moccasins">
+            <div class="product-details">
+                <p class="brand-name">Moccasins</p>
+                <p class="price">KSH 3200</p>
+                <p class="description">Lightweight moccasins offering a relaxed fit for casual and semi-formal occasions.</p>
+                <button class="add-to-cart" onclick="addToCart({name: 'Moccasins', brand:'Moccasins', price: 3200})">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="assets/pexels-scottwebb-137603.jpg" alt="Heels">
+            <div class="product-details">
+                <p class="brand-name">Heels</p>
+                <p class="price">KSH 2500</p>
+                <p class="description">Stylish heels designed for comfort and affordability, perfect for day-to-night outfits.</p>
+                <button class="add-to-cart" onclick="addToCart({name: 'Heels',price: 2500,image:'assets/pexels-scottwebb-137603.jpg'})">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="assets/pexels-solliefoto-298863.jpg" alt="Casual Shoes">
+            <div class="product-details">
+                <p class="brand-name">Casual</p>
+                <p class="price">KSH 5000</p>
+                <p class="description">Premium casual shoes for superior comfort and everyday elegance.</p>
+                <button class="add-to-cart" onclick="addToCart({name: 'Casual',price: 5000,image:'assets/pexels-solliefoto-298863.jpg'})">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="assets/pexels-solliefoto-298864.jpg" alt="Casual Shoes">
+            <div class="product-details">
+                <p class="brand-name">Casual</p>
+                <p class="price">KSH 4800</p>
+                <p class="description">Versatile casual shoes that pair well with any outfit, ensuring both comfort and style.</p>
+                <button class="add-to-cart" onclick="addToCart({name: 'Casual',price: 4800, image:'assets/pexels-solliefoto-298864.jpg'})">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    
         <script>
         function addToCart(brandName) {
             alert(brandName + " has been added to your cart!");
@@ -218,3 +209,7 @@
     </script>
 </body>
 </html>
+
+
+
+
