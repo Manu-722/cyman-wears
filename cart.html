@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,51 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .original-price {
+            text-decoration: line-through;
+            color: red;
+            margin-right: 10px;
+        }
+
+        .discounted-price {
+            color: green;
+            font-weight: bold;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .cart-total {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .apply-discount,
+        .clear-cart {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin: 5px;
+        }
+
+        .apply-discount:hover,
+        .clear-cart:hover {
+            background-color: #005F8C;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-
         <header class="top-header">
             <h1>Shopping Cart</h1>
             <a href="view-products.html" class="back-button">Back to Products</a>
         </header>
         
-        
-        
-        
         <div id="cart-items" class="cart-list"></div>
         <div class="cart-total">
             <p>Total: KSH <span id="total">0</span></p>
-            
-            <button onclick="clearCart()">Clear Cart</button>
+            <div class="button-container">
+                <button class="apply-discount" onclick="applyDiscount()">Apply Discount</button>
+                <button class="clear-cart" onclick="clearCart()">Clear Cart</button>
+            </div>
         </div>
     </div>
-
-
-    <div id="cart-items"></div>
-<div id="total-amount"></div>
-<span id="cart-count" style="display: none;"></span>
-<select id="payment-method">
-    <option value="cash">Cash</option>
-    <option value="card">Card</option>
-</select>
-
- <!-- Discount Details -->
- <div id="discount-section">
-    <p id="discount-details" class="text-gray-500"></p>
-    <button onclick="applyDiscount()">Apply Discount</button>
-</div>
-<!-- Cart Summary Section -->
-<div id="cart-summary">
-    <span id="cart-count" style="display: none;"></span>
-    <button onclick="checkout()">Checkout</button>
-</div>
-
 
     <script>
         const cartItemsContainer = document.getElementById('cart-items');
         const totalDisplay = document.getElementById('total');
-        const cartCount = document.getElementById('cart-count');
+        let total = 0;
 
         // Render the cart
         function renderCart() {
@@ -62,24 +90,62 @@
                 return;
             }
 
-            let total = 0;
+            total = 0;
             cart.forEach((item, index) => {
                 total += item.price;
+
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'cart-item';
-                itemDiv.innerHTML = `
-                    <div>
-                        <img src="${item.image}" alt="${item.name}" style="width: 100px; height: auto;">
-                        <p><strong>${item.name}</strong></p>
-                        <p>Brand: ${item.brand}</p>
-                        <p>Price: KSH ${item.price}</p>
-                    </div>
-                    <button onclick="removeItem(${index})">Remove</button>
-                `;
+
+                // Check number of items in the cart
+                if (cart.length === 1) {
+                    itemDiv.innerHTML = `
+                        <div>
+                            <img src="${item.image}" alt="${item.name}" style="width: 100px; height: auto;">
+                            <p><strong>${item.name}</strong></p>
+                            <p>Brand: ${item.brand}</p>
+                            <p>Price: KSH ${item.price.toFixed(2)}</p>
+                        </div>
+                        <button onclick="removeItem(${index})">Remove</button>
+                    `;
+                } else {
+                    itemDiv.innerHTML = `
+                        <div>
+                            <img src="${item.image}" alt="${item.name}" style="width: 100px; height: auto;">
+                            <p><strong>${item.name}</strong></p>
+                            <p>Brand: ${item.brand}</p>
+                            <p>
+                                <span class="original-price">KSH ${item.price.toFixed(2)}</span>
+                                <span class="discounted-price" id="discounted-price-${index}"></span>
+                            </p>
+                        </div>
+                        <button onclick="removeItem(${index})">Remove</button>
+                    `;
+                }
+
                 cartItemsContainer.appendChild(itemDiv);
             });
 
-            totalDisplay.textContent = total;
+            totalDisplay.textContent = total.toFixed(2);
+        }
+
+        // Apply discount if cart has more than one item
+        function applyDiscount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length <= 1) {
+                alert("Discount applies only if you buy more than one item.");
+                return;
+            }
+
+            let discountPercentage = 0.10; // 10% discount
+            cart.forEach((item, index) => {
+                const discountedPrice = item.price - (item.price * discountPercentage);
+                document.getElementById(`discounted-price-${index}`).textContent = `KSH ${discountedPrice.toFixed(2)}`;
+                total -= (item.price * discountPercentage);
+            });
+
+            totalDisplay.textContent = total.toFixed(2);
+            alert("Discount applied to all items in your cart!");
         }
 
         // Remove an item from the cart
@@ -98,38 +164,6 @@
 
         // Initial render
         renderCart();
-
-
-
-
-
-        // Function to apply a discount code
-function applyDiscount() {
-    const discountCode = prompt("Enter discount code:");
-    const validCodes = {
-        SAVE10: 0.10, // 10% discount
-        SAVE20: 0.20  // 20% discount
-    };
-
-    if (validCodes[discountCode]) {
-        const discount = validCodes[discountCode];
-        const discountAmount = total * discount;
-        total -= discountAmount;
-        alert(`Discount applied! You saved KSH ${discountAmount.toFixed(2)}.`);
-        updateCartSummary();
-    } else {
-        alert("Invalid discount code.");
-    }
-}
-
-
     </script>
-   
-   
-    
 </body>
 </html>
-
-
-
-       
