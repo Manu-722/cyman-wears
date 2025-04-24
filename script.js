@@ -306,7 +306,3 @@ function applyDiscount() {
         alert("Invalid discount code.");
     }
 }
-
-// Add a button in your UI for applying the discount
-// <button onclick="applyDiscount()">Apply Discount</button>
-  
